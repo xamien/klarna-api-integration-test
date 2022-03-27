@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  klarna-api-test-app:
+    build: ./
+    restart: always
+    environment:
+      DEBUG: klarna*
+      KLARNA_API_USERNAME: xxx
+      KLARNA_API_PASSWORD: xxx
+    ports:
+      - 3000:3000

@@ -1,0 +1,33 @@
+{
+  "name": "klarna-api-integration-test",
+  "version": "0.1.0",
+  "description": "Application for testing Klarna Payment API and Order management API.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xamien/klarna-api-integration-test"
+  },
+  "author": "xamien@seznam.cz",
+  "main": "app.js",
+  "scripts": {
+    "eslint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 --ext .js .",
+    "start": "node ./bin/start"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.3",
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "http-errors": "^2.0.0",
+    "lokijs": "^1.5.12",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
+}

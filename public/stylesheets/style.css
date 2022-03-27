@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+    background-color: #ffb3c7;
+}
+
+.content {
+    max-width: 600px;
+    margin: auto;
+}
+
+pre {
+    border: 1px solid black;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+button {
+    background-color: #000000;
+    border: none;
+    color: white;
+    margin-top: 10px;
+    padding: 15px 32px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    font-family: "Open Sans";
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+table {
+    width: 100%;
+}
+
+th,td {
+    text-align: left;
+}
+
+table td button {
+    padding: 5px 10px;
+    font-size: 12px;
+}

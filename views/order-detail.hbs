@@ -1,0 +1,20 @@
+<div class="content">
+    <h1>{{title}}</h1>
+    <p><a href="/">Dashboard</a> &#x3E; Order "{{orderId}}"</p>
+    {{#if canCapture}}
+        <form method="post" action="/order/{{orderId}}/capture">
+            <button type="submit">Capture order</button>
+        </form>
+    {{/if}}
+    {{#if canRefund}}
+        <form method="post" action="/order/{{orderId}}/refund">
+            <button type="submit">Refund order</button>
+        </form>
+    {{/if}}
+    {{#if canCancel}}
+        <form method="post" action="/order/{{orderId}}/cancel">
+            <button type="submit">Cancel order</button>
+        </form>
+    {{/if}}
+    <pre>{{order}}</pre>
+</div>

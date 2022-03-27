@@ -1,0 +1,46 @@
+<div class="content">
+    <h1>{{title}}</h1>
+    <p><a href="/">Dashboard</a> &#x3E; Session "{{sessionId}}"</p>
+    <div id="klarna-container"></div>
+    <button type="button" id="place_order">PLACE ORDER</button>
+    <form id="createOrder" method="post" action="/order/new">
+        <input type="hidden" name="sessionId" value="{{sessionId}}" />
+        <input type="hidden" name="authorizationToken" id="authorizationToken" value="" />
+    </form>
+</div>
+<script>
+    window.onload = function () {
+        Klarna.Payments.init({
+            client_token: "{{session.clientToken}}"
+        });
+        Klarna.Payments.load({
+            container: "#klarna-container",
+            payment_method_category: "pay_over_time"
+        }, {
+            //orderline updates here if needed
+        }, function (res) {
+            console.debug("Load Payment callback: ", res);
+        });
+    };
+
+    //get a reference to the element
+    const placeOrder = document.getElementById("place_order");
+
+    //add event listener
+    placeOrder.addEventListener("click", function (event) {
+        Klarna.Payments.authorize({
+            payment_method_category: "pay_over_time",
+            auto_finalize: false
+        }, {
+
+        }, function (res) {
+            console.debug("Authorize Payment callback: ", res);
+            if ( res.approved && res.approved === true && res["authorization_token"] ) {
+              document.getElementById("place_order").style.display = "none";
+
+              document.getElementById("authorizationToken").value = res["authorization_token"];
+              document.getElementById("createOrder").submit();
+            }
+        });
+    });
+</script>
