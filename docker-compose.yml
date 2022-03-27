@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   klarna-api-test-app:
+    image: xamien/klarna-api-integration-test:0.1.0
     build: ./
     restart: always
     environment:
